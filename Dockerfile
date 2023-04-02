@@ -3,7 +3,7 @@
 FROM --platform=$BUILDPLATFORM python:alpine AS base
 WORKDIR /app
 COPY requirements.txt .
-RUN pip install -r requirements.txt
+RUN pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/
 
 FROM --platform=$BUILDPLATFORM node:18-alpine AS app-base
 WORKDIR /app
